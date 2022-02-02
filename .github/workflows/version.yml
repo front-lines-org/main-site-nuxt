@@ -3,7 +3,7 @@ name: 'update version'
 on:
   push:
     branches:
-      - 'test'
+      - 'main'
 
 jobs:
   bump-version:
