@@ -1,28 +1,33 @@
-name: ci
+name: 'update version'
 
 on:
   push:
     branches:
-      - main
-      - master
-jobs:
-  ci:
-    runs-on: ${{ matrix.os }}
+      - 'test'
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
+jobs:
+  bump-version:
+    name: 'Bump Version on master'
+    runs-on: ubuntu-latest
 
     steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
+        with:
+          ref: ${{ github.ref }}
+      - name: 'cat package.json'
+        run: cat ./package.json
       - name: 'Automated Version Bump'
-        uses: 'phips28/gh-action-bump-version@master'
+        id: version-bump
+        uses: 'phips28/gh-action-bump-version@v9.0.1'
+        with:
+          tag-prefix: 'v'
+          default: 'minor'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          minor-wording: 'add,Adds,new,minor'
-          major-wording: 'MAJOR,cut-major,major'
-          patch-wording:
-            'patch,fixes,patch' # Providing patch-wording will override commits
-            # defaulting to a patch bump.
-          rc-wording: 'RELEASE,alpha'
+      - name: 'cat package.json'
+        run: cat ./package.json
+      - name: 'Output Step'
+        env:
+          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+        run: echo "new tag $NEW_TAG"
