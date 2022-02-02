@@ -15,13 +15,14 @@ jobs:
         node: [14]
 
     steps:
-    - name:  'Automated Version Bump'
-      uses:  'phips28/gh-action-bump-version@master'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        minor-wording:  'add,Adds,new,minor'
-        major-wording:  'MAJOR,cut-major,major'
-        patch-wording:  'patch,fixes,patch'     # Providing patch-wording will override commits
-                                          # defaulting to a patch bump.
-        rc-wording:     'RELEASE,alpha'
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          minor-wording: 'add,Adds,new,minor'
+          major-wording: 'MAJOR,cut-major,major'
+          patch-wording:
+            'patch,fixes,patch' # Providing patch-wording will override commits
+            # defaulting to a patch bump.
+          rc-wording: 'RELEASE,alpha'
