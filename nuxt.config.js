@@ -19,7 +19,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/overrides.sass'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -56,7 +56,7 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: '#f9a1bc',
+          primary: '#000000',
           secondary: '#ffba74',
           accent: '#8bc34a',
           error: '#ffc107',
