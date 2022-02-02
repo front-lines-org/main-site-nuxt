@@ -2,14 +2,15 @@
   <v-card class="article" tile flat nuxt to="/articles/donbas">
     <v-img :src="img"></v-img>
 
-    <p class="primary-color">{{ articleType }}</p>
-    <v-card-title style="word-break: normal">{{ title }}</v-card-title>
-    <v-card-text>
-      This is a setence that can be longer than the title, just providers more
-      context for an article in a not annoying way.
+    <p class="primary-color pa-1 font-weight-black">{{ articleType }}</p>
+    <v-card-title style="word-break: normal" class="pa-1">{{
+      title
+    }}</v-card-title>
+    <v-card-text class="pa-1">
+      {{ description }}
     </v-card-text>
-    <v-card-text>
-      <b>By Ruben Soerdien</b>
+    <v-card-text class="pa-1">
+      <b>By {{ author }}</b>
     </v-card-text>
   </v-card>
 </template>
@@ -30,6 +31,14 @@ export default {
       default: '',
     },
     img: {
+      type: String,
+      default: '',
+    },
+    author: {
+      type: String,
+      default: 'Unknown',
+    },
+    description: {
       type: String,
       default: '',
     },

@@ -1,29 +1,9 @@
 <template>
-  <!-- <div>
-    <div class="tw-grid tw-grid-cols-9">
-      <div class="tw-col-span-7">
-        <div class="tw-grid tw-grid-cols-6">
-          <div
-            v-for="article in articles"
-            :key="article.title"
-            :class="`tw-p-3 tw-col-span-${article.colSpan} tw-row-span-${article.rowSpan}`"
-          >
-            <article-thumbnail
-              :title="article.title"
-              :article-type="article.articleType"
-              :img="article.img"
-            />
-          </div>
-        </div>
-      </div>
-      <div>Latest news</div>
-    </div>
-  </div> -->
   <v-container no-gutters>
     <v-row>
       <v-col md="9" sm="12" lg="9" order-sm="2" order-md="1">
         <v-row>
-          <v-col md="3" sm="12">
+          <v-col md="3" sm="12" class="pt-5">
             <article-thumbnail
               v-if="articles"
               :title="articles[4].title"
@@ -54,9 +34,11 @@
             <v-col md="12">
               <article-thumbnail
                 v-if="articles"
-                :title="articles[1].title"
-                :article-type="articles[1].articleType"
-                :img="articles[1].img"
+                :title="news[0].title"
+                :article-type="news[0].articleType"
+                :img="news[0].img"
+                :author="news[0].author"
+                :description="news[0].shortDescription || news[0].description"
               />
             </v-col>
             <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
@@ -74,19 +56,7 @@
       </v-col>
       <v-col md="3" sm="12" order-sm="1" order-md="2">
         <v-divider inset vertical class="d-none d-sm-block"></v-divider>
-        <h1>Latest News</h1>
-        <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
-        <small-article-thumbnail
-          v-if="articles"
-          :title="articles[0].title"
-          :article-type="articles[0].articleType"
-          :img="articles[0].img"
-        />
-        <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
-      </v-col>
-      <v-col md="3" sm="12" order-sm="1" order-md="2" offset-sm="9">
-        <v-divider inset vertical class="d-none d-sm-block"></v-divider>
-        <h1>Latest News</h1>
+        <h5 class="text-h5 pa-2">Latest News</h5>
         <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
         <small-article-thumbnail
           v-if="articles"
@@ -106,19 +76,6 @@ export default {
   data() {
     return {
       articles: [
-        {
-          title: 'Russia threatens retaliation if Ukraine demands not met',
-          shortDescription:
-            'Putin personally theatens with retaliation for Ukraine if demands for NATO are not met',
-          articleType: 'Research',
-          img: '/ukraine.jpg',
-        },
-        {
-          title:
-            'U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine',
-          articleType: 'Analysis',
-          img: '/ukraine6.jpg',
-        },
         {
           title:
             'The Czech Republic considers the deployment of military troops in Ukraine',
@@ -155,6 +112,25 @@ export default {
           img: '/ukraine7.jpg',
         },
       ],
+    }
+  },
+  async asyncData({ $content, params }) {
+    const news = await $content('articles', params.slug)
+      .only([
+        'title',
+        'shortDescription',
+        'img',
+        'slug',
+        'description',
+        'author',
+        'createdAt',
+        'category',
+      ])
+      .sortBy('createdAt', 'asc')
+      .fetch()
+    console.log(news)
+    return {
+      news,
     }
   },
 }

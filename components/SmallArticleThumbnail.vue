@@ -28,7 +28,7 @@ export default {
   computed: {},
 }
 </script>
-<style scoped>
+<style>
 .article:hover {
   text-decoration: underline;
 }
