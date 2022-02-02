@@ -1,4 +1,5 @@
 # main-site-nuxt
+This is purely the code for the website, content is on the content repo.
 
 ## Build Setup
 
