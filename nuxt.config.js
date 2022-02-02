@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - main-site-nuxt',
-    title: 'main-site-nuxt',
+    title: 'Front Lines',
     htmlAttrs: {
       lang: 'en',
     },
@@ -56,7 +56,7 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: '#f29dc4',
+          primary: '#f9a1bc',
           secondary: '#ffba74',
           accent: '#8bc34a',
           error: '#ffc107',
