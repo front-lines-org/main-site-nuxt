@@ -10,7 +10,7 @@
       :article-date="article.createdAt || article.updatedAt"
     />
     <img :src="article.img" :alt="article.img" class="mb-0" />
-    <p class="text-xs font-light mt-0">
+    <p class="text-xs font-light mt-0 text-slate-300 tw-not-prose">
       Image: Ukraine ministry of Defense. Troops training
     </p>
     <nuxt-content
@@ -21,11 +21,9 @@
 </template>
 <script>
 export default {
-  layout: 'article',
+  layout: 'article-layout',
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
-    console.log(article)
-    console.log(article.createdAt)
     return { article }
   },
   methods: {

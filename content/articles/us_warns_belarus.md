@@ -4,7 +4,7 @@ shortDescription: The president of the United states has warned Belarus with ext
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
 img: '/ukraine4.jpg'
 author: 'Unknown'
-category: 'Research'
+category: 'News'
 ---
 
 <!-- [Rubennaatje](/author/Rubennaatje) 27 April 2021, 21:11 -->

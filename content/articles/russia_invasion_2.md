@@ -4,7 +4,7 @@ shortDescription: During a testy exchange with a reporter in which he was presse
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
 img: '/ukraine6.jpg'
 author: 'Unknown'
-category: 'Research'
+category: 'Opinion'
 ---
 
 <!-- [Rubennaatje](/author/Rubennaatje) 27 April 2021, 21:11 -->
