@@ -9,10 +9,6 @@ category: 'Research'
 
 <!-- [Rubennaatje](/author/Rubennaatje) 27 April 2021, 21:11 -->
 
-![test](/ukraine4_big.jpg)
-
-Ukrainian forces training. Ukrainian Ministry of Defense
-
 ### What is going on in the Donbas?
 
 Fighting between Donetsk People's Republic separatist forces affiliated

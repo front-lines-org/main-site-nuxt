@@ -1,5 +1,5 @@
 <template>
-  <v-tabs grow elevation="0" class="tw-border-t tw-border-b">
+  <v-tabs grow elevation="0" class="tw-border-t tw-border-b sticky top-0">
     <v-tab to="/" nuxt>Home</v-tab>
     <v-tab to="/maps/ukraine" nuxt>Live map</v-tab>
     <v-tab to="/news/Ukraine" nuxt>Ukraine</v-tab>

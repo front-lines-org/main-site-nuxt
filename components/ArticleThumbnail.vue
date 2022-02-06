@@ -1,5 +1,5 @@
 <template>
-  <v-card class="article" tile flat nuxt to="/articles/donbas">
+  <v-card class="article" tile flat nuxt :to="`articles/${slug}`">
     <v-img :src="img"></v-img>
 
     <p class="primary-color pa-1 font-weight-black">{{ articleType }}</p>
@@ -21,6 +21,10 @@ export default {
     type: {
       type: String,
       default: 'primary',
+    },
+    slug: {
+      type: String,
+      default: '',
     },
     title: {
       type: String,

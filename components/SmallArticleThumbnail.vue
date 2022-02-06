@@ -1,5 +1,5 @@
 <template>
-  <v-card class="article" tile flat nuxt to="/articles/donbas">
+  <v-card class="article" tile flat nuxt :to="`articles/${slug}`">
     <v-card-title style="word-break: normal">{{ title }} </v-card-title>
     <v-card-subtitle> Today 10:14 </v-card-subtitle>
   </v-card>
@@ -11,6 +11,10 @@ export default {
     type: {
       type: String,
       default: 'primary',
+    },
+    slug: {
+      type: String,
+      default: '',
     },
     title: {
       type: String,

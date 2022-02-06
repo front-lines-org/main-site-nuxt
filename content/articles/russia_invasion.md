@@ -1,8 +1,8 @@
 ---
-title: Russia threatens retaliation if Ukraine demands not met
-shortDescription: Putin personally theatens with retaliation for Ukraine if demands for NATO are not met
+title: Russia Is Positioned to Invade All of Ukraine, U.S. Says, but Kyiv Downplays War Talk
+shortDescription: The Russian military buildup around Ukraine is unlike anything since “the Cold War days” said Gen. Mark A. Milley, chairman of the U.S. Joint Chiefs of Staff.
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
-img: '/ukraine7.jpg'
+img: '/ukraine5.jpg'
 author: 'Unknown'
 category: 'Research'
 ---

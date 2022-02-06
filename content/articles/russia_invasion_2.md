@@ -1,8 +1,8 @@
 ---
-title: Russia threatens retaliation if Ukraine demands not met
-shortDescription: Putin personally theatens with retaliation for Ukraine if demands for NATO are not met
+title: U.S. Accuses Russia of Planning to Fabricate an Attack by Ukraine
+shortDescription: During a testy exchange with a reporter in which he was pressed for evidence, Ned Price, the State Department’s spokesman, said Moscow’s plot involved staging an attack by the Ukrainian military.
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
-img: '/ukraine7.jpg'
+img: '/ukraine6.jpg'
 author: 'Unknown'
 category: 'Research'
 ---

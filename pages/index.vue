@@ -4,51 +4,55 @@
       <v-col md="9" sm="12" lg="9" order-sm="2" order-md="1">
         <v-row>
           <v-col md="3" sm="12" class="pt-5">
-            <article-thumbnail
-              v-if="articles"
-              :title="articles[4].title"
-              :article-type="articles[4].articleType"
-              :img="articles[4].img"
-            />
-            <v-divider
-              inset
-              horizontal
-              class="d-none d-sm-block tw-ml-0"
-            ></v-divider>
-            <article-thumbnail
-              v-if="articles"
-              :title="articles[5].title"
-              :article-type="articles[5].articleType"
-              :img="articles[5].img"
-            />
-            <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
-            <article-thumbnail
-              v-if="articles"
-              :title="articles[2].title"
-              :article-type="articles[2].articleType"
-              :img="articles[2].img"
-            />
+            <template v-for="item in news.slice(4, 7)">
+              <article-thumbnail
+                :key="item.slug"
+                v-if="item"
+                :title="item.title"
+                :slug="item.slug"
+                :article-type="item.articleType"
+                :img="item.img"
+              />
+              <v-divider
+                horizontal
+                class="mb-2"
+                :key="`${item.slug}_divider`"
+              ></v-divider>
+            </template>
           </v-col>
           <v-divider inset vertical class="d-none d-sm-block"></v-divider>
           <v-col md="9" sm="12">
             <v-col md="12">
-              <article-thumbnail
-                v-if="articles"
-                :title="news[0].title"
-                :article-type="news[0].articleType"
-                :img="news[0].img"
-                :author="news[0].author"
-                :description="news[0].shortDescription || news[0].description"
-              />
+              <template v-for="item in news.slice(1, 2)">
+                <article-thumbnail
+                  v-if="item"
+                  :title="item.title"
+                  :slug="item.slug"
+                  :article-type="item.articleType"
+                  :img="item.img"
+                  :author="item.author"
+                  :key="item.slug"
+                  :description="item.shortDescription || item.description"
+                />
+              </template>
             </v-col>
             <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
             <v-col>
-              <article-preview
-                v-if="articles"
-                :title="articles[0].title"
-                :article-type="articles[0].articleType"
-                :img="articles[0].img"
-              />
+              <template v-for="item in news.slice(2, 5)">
+                <article-preview
+                  v-if="item"
+                  :title="item.title"
+                  :slug="item.slug"
+                  :article-type="item.articleType"
+                  :img="item.img"
+                  :key="item.slug"
+                />
+                <v-divider
+                  horizontal
+                  class="my-3"
+                  :key="`${item.slug}_divider`"
+                ></v-divider>
+              </template>
             </v-col>
           </v-col>
           <v-divider inset vertical class="d-none d-sm-block"></v-divider>
@@ -58,13 +62,21 @@
         <v-divider inset vertical class="d-none d-sm-block"></v-divider>
         <h5 class="text-h5 pa-2">Latest News</h5>
         <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
-        <small-article-thumbnail
-          v-if="articles"
-          :title="articles[0].title"
-          :article-type="articles[0].articleType"
-          :img="articles[0].img"
-        />
-        <v-divider inset horizontal class="d-none d-sm-block"></v-divider>
+        <template v-for="item in news">
+          <small-article-thumbnail
+            v-if="item"
+            :title="item.title"
+            :slug="item.slug"
+            :article-type="item.articleType"
+            :img="item.img"
+            :key="item.slug"
+          />
+          <v-divider
+            horizontal
+            class="d-none d-sm-block my-3"
+            :key="`${item.slug}_divider`"
+          ></v-divider>
+        </template>
       </v-col>
     </v-row>
   </v-container>
@@ -73,47 +85,6 @@
 <script>
 export default {
   name: 'IndexPage',
-  data() {
-    return {
-      articles: [
-        {
-          title:
-            'The Czech Republic considers the deployment of military troops in Ukraine',
-          articleType: 'News',
-          img: 'https://images0.persgroep.net/rcs/0vGtI6P5odZpWHoU01du7Dhy3QI/diocontent/202313124/_crop/0/408/5568/3631/_fill/600/391?appId=93a17a8fd81db0de025c8abd1cca1279&quality=0.85',
-        },
-        {
-          title: "Germany offers Ukraine helmets, draws Kyiv mayor's ire",
-          articleType: 'News',
-          img: '/ukraine5.jpg',
-        },
-        {
-          title:
-            'US and allies discussing deploying more troops to Eastern Europe prior to any Russian invasion of Ukraine',
-          articleType: 'Report',
-          img: '/ukraine4.jpg',
-        },
-        {
-          title:
-            'US and allies discussing deploying more troops to Eastern Europe prior to any Russian invasion of Ukraine',
-          articleType: 'News',
-          img: '/ukraine2.jpg',
-        },
-        {
-          title:
-            'US and allies discussing deploying more troops to Eastern Europe prior to any Russian invasion of Ukraine',
-          articleType: 'Opinion',
-          img: '/ukraine3.jpg',
-        },
-        {
-          title:
-            'US and allies discussing deploying more troops to Eastern Europe prior to any Russian invasion of Ukraine',
-          articleType: 'Research',
-          img: '/ukraine7.jpg',
-        },
-      ],
-    }
-  },
   async asyncData({ $content, params }) {
     const news = await $content('articles', params.slug)
       .only([
