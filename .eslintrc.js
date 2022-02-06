@@ -12,11 +12,7 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
-    'vue/multi-word-component-names': [
-      'error',
-      {
-        ignores: ['default'],
-      },
-    ],
+    // Too much trouble with routes and layouts
+    'vue/multi-word-component-names': 'off',
   },
 }
