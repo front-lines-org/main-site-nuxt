@@ -9,7 +9,7 @@
       :author-user-name="article.author"
       :article-date="article.createdAt || article.updatedAt"
     />
-    <img :src="article.img" :alt="article.img" class="mb-0" />
+    <nuxt-img :src="article.img" :alt="article.img" class="mb-0" />
     <p class="text-xs font-light mt-0 text-slate-300 tw-not-prose">
       Image: Ukraine ministry of Defense. Troops training
     </p>

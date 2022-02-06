@@ -1,7 +1,7 @@
 <template>
   <v-toolbar color="elevation-0">
     <v-toolbar-title>
-      <img src="/logo_transparent.png" width="200px" />
+      <nuxt-img src="/logo_transparent.png" width="200px" />
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon>
