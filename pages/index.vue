@@ -10,7 +10,7 @@
                 v-if="item"
                 :title="item.title"
                 :slug="item.slug"
-                :article-type="item.articleType"
+                :article-type="item.category"
                 :img="item.img"
               />
               <v-divider
@@ -28,7 +28,7 @@
                   v-if="item"
                   :title="item.title"
                   :slug="item.slug"
-                  :article-type="item.articleType"
+                  :article-type="item.category"
                   :img="item.img"
                   :author="item.author"
                   :key="item.slug"
@@ -43,7 +43,7 @@
                   v-if="item"
                   :title="item.title"
                   :slug="item.slug"
-                  :article-type="item.articleType"
+                  :article-type="item.category"
                   :img="item.img"
                   :key="item.slug"
                 />
@@ -67,7 +67,7 @@
             v-if="item"
             :title="item.title"
             :slug="item.slug"
-            :article-type="item.articleType"
+            :article-type="item.category"
             :img="item.img"
             :key="item.slug"
           />
