@@ -4,7 +4,7 @@ shortDescription: Putin personally theatens with retaliation for Ukraine if dema
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
 img: '/ukraine7.jpg'
 author: 'Unknown'
-category: 'Research'
+category: 'News'
 ---
 
 <!-- [Rubennaatje](/author/Rubennaatje) 27 April 2021, 21:11 -->
