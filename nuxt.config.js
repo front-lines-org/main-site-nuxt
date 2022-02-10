@@ -42,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-leaflet',
+    '@nuxtjs/dayjs',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -70,6 +71,16 @@ export default {
     },
   },
 
+  dayjs: {
+    plugins: [
+      'relativeTime', // import 'dayjs/plugin/timezone'
+    ], // Your Day.js plugin
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    analyze: {
+      analyzerMode: 'static',
+    },
+  },
 }

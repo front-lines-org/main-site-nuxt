@@ -1,7 +1,8 @@
 <template>
   <article
-    class="tw-prose tw-prose-sm tw-sm:prose tw-lg:prose-lg tw-xl:prose-2xl tw-mx-auto"
+    class="tw-prose tw-prose-sm tw-sm:prose tw-lg:prose-lg tw-xl:prose-2xl tw-mx-auto tw-mt-9"
   >
+    <h3 class="primary-color font-weight-black">{{ article.category }}</h3>
     <h1 class="h1">{{ article.title }}</h1>
     <p class="tw-font-bold">{{ article.description }}</p>
     <author-name
@@ -46,5 +47,9 @@ export default {
 }
 .nuxt-content p {
   margin-bottom: 20px;
+}
+
+.primary-color {
+  color: #f9a1bc;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <p>
-    <a href="/Author/a"> {{ authorName }}</a> {{ articleDate }}
+    <nuxt-link :to="`/Author/${authorUserName}`" class="tw-text-black">
+      {{ authorName }}</nuxt-link
+    >
+    {{ date }}
   </p>
 </template>
 
@@ -18,6 +21,12 @@ export default {
     articleDate: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    date() {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(this.articleDate).toLocaleDateString('en', options)
     },
   },
 }

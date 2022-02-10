@@ -6,17 +6,17 @@
           <v-col md="3" sm="12" class="pt-5">
             <template v-for="item in news.slice(4, 7)">
               <article-thumbnail
-                :key="item.slug"
                 v-if="item"
+                :key="item.slug"
                 :title="item.title"
                 :slug="item.slug"
                 :article-type="item.category"
                 :img="item.img"
               />
               <v-divider
+                :key="`${item.slug}_divider`"
                 horizontal
                 class="mb-2"
-                :key="`${item.slug}_divider`"
               ></v-divider>
             </template>
           </v-col>
@@ -26,12 +26,12 @@
               <template v-for="item in news.slice(1, 2)">
                 <article-thumbnail
                   v-if="item"
+                  :key="item.slug"
                   :title="item.title"
                   :slug="item.slug"
                   :article-type="item.category"
                   :img="item.img"
                   :author="item.author"
-                  :key="item.slug"
                   :description="item.shortDescription || item.description"
                 />
               </template>
@@ -41,16 +41,16 @@
               <template v-for="item in news.slice(2, 5)">
                 <article-preview
                   v-if="item"
+                  :key="item.slug"
                   :title="item.title"
                   :slug="item.slug"
                   :article-type="item.category"
                   :img="item.img"
-                  :key="item.slug"
                 />
                 <v-divider
+                  :key="`${item.slug}_divider`"
                   horizontal
                   class="my-3"
-                  :key="`${item.slug}_divider`"
                 ></v-divider>
               </template>
             </v-col>
@@ -65,16 +65,17 @@
         <template v-for="item in news">
           <small-article-thumbnail
             v-if="item"
+            :key="item.slug"
             :title="item.title"
             :slug="item.slug"
             :article-type="item.category"
             :img="item.img"
-            :key="item.slug"
+            :created-at="item.createdAt"
           />
           <v-divider
+            :key="`${item.slug}_divider`"
             horizontal
             class="d-none d-sm-block my-3"
-            :key="`${item.slug}_divider`"
           ></v-divider>
         </template>
       </v-col>
