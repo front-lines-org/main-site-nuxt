@@ -2,7 +2,7 @@
 title: The Czech Republic considers the deployment of military troops in Ukraine
 shortDescription: The president of the United states has warned Belarus with extra sanctions for helping the looming Russian invansion of Ukraine
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
-img: '/ukraine5.jpg'
+img: 'ukraine5.jpg'
 author: 'Unknown'
 category: 'News'
 ---

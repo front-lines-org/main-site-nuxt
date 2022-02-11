@@ -2,7 +2,7 @@
 title: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
 shortDescription: The president of the United states has warned Belarus with extra sanctions for helping the looming Russian invansion of Ukraine
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
-img: '/ukraine4.jpg'
+img: 'ukraine4.jpg'
 author: 'Unknown'
 category: 'News'
 ---

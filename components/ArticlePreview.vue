@@ -14,7 +14,7 @@
         </v-card-text>
       </v-col>
       <v-col cols="5" sm="12" md="4" class="tw-mx-auto">
-        <v-img :src="img" :aspect-ratio="16 / 9"></v-img>
+        <v-img :src="require(`~/assets/img/${img}?webp`)" />
       </v-col>
     </v-row>
   </v-card>

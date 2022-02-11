@@ -2,7 +2,7 @@
 title: Russia threatens retaliation if Ukraine demands not met
 shortDescription: Putin personally theatens with retaliation for Ukraine if demands for NATO are not met
 description: U.S. Warns Belarus Against Helping Potential Russian Invasion Of Ukraine
-img: '/ukraine7.jpg'
+img: 'ukraine7.jpg'
 author: 'Unknown'
 category: 'News'
 ---

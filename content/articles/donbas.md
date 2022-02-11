@@ -2,7 +2,7 @@
 title: Fighting continues despite cease fire in Ukraine
 shortDescription: Short description for this article
 description: 'Chad has played a key role in Western anti-terrorism efforts in the Sahel for years. Warlord-President Idriss Déby fulfilled the role of military subcontractor with verve. Now that Déby has been killed by rebels last week, and a military junta has taken over power in the country, the question is whether Chad can maintain its military role in the region.'
-img: '/ukraine3.jpg'
+img: 'ukraine3.jpg'
 author: 'Unknown'
 category: 'News'
 ---

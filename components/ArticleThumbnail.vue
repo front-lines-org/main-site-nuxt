@@ -1,6 +1,6 @@
 <template>
   <v-card class="article" tile flat nuxt :to="`articles/${slug}`">
-    <v-img :src="img"></v-img>
+    <v-img :src="require(`~/assets/img/${img}?webp`)" />
 
     <p class="primary-color pa-1 font-weight-black">{{ articleType }}</p>
     <v-card-title style="word-break: normal" class="pa-1">{{
