@@ -11,7 +11,7 @@
       :article-date="article.createdAt || article.updatedAt"
     />
     <img
-      :src="require(`~/assets/img/${img}`)"
+      :src="require(`~/assets/img/${article.img}?webp`)"
       :alt="article.img"
       class="mb-0"
     />
