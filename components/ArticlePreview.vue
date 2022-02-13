@@ -14,7 +14,7 @@
         </v-card-text>
       </v-col>
       <v-col cols="5" sm="12" md="4" class="tw-mx-auto">
-        <v-img :src="require(`~/assets/img/${img}?webp`)" />
+        <v-img :src="image" />
       </v-col>
     </v-row>
   </v-card>
@@ -48,7 +48,16 @@ export default {
       default: '',
     },
   },
-  computed: {},
+  computed: {
+    image() {
+      try {
+        const foundImage = require(`~/assets/img/${this.img}?webp`)
+        return foundImage
+      } catch {
+        return null
+      }
+    },
+  },
 }
 </script>
 <style scoped>

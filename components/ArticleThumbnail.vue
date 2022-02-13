@@ -1,6 +1,6 @@
 <template>
   <v-card class="article" tile flat nuxt :to="`articles/${slug}`">
-    <v-img :src="require(`~/assets/img/${img}?webp`)" />
+    <v-img :src="image" />
 
     <p class="primary-color pa-1 font-weight-black">{{ articleType }}</p>
     <v-card-title style="word-break: normal" class="pa-1">{{
@@ -47,7 +47,16 @@ export default {
       default: '',
     },
   },
-  computed: {},
+  computed: {
+    image() {
+      try {
+        const foundImage = require(`~/assets/img/${this.img}?webp`)
+        return foundImage
+      } catch {
+        return null
+      }
+    },
+  },
 }
 </script>
 <style scoped>

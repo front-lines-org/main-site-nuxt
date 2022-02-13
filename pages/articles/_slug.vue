@@ -10,11 +10,7 @@
       :author-user-name="article.author"
       :article-date="article.createdAt || article.updatedAt"
     />
-    <img
-      :src="require(`~/assets/img/${img}`)"
-      :alt="article.img"
-      class="mb-0"
-    />
+    <img :src="image" :alt="article.img" class="mb-0" />
     <p class="text-xs font-light mt-0 text-slate-300 tw-not-prose">
       Image: Ukraine ministry of Defense. Troops training
     </p>
@@ -30,6 +26,19 @@ export default {
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
     return { article }
+  },
+  computed: {
+    image() {
+      try {
+        if (!this.article) {
+          return null
+        }
+        const foundImage = require(`~/assets/img/${this.article.img}?webp`)
+        return foundImage
+      } catch {
+        return null
+      }
+    },
   },
   methods: {
     formatDate(date) {
