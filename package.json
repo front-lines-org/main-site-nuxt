@@ -1,6 +1,6 @@
 {
   "name": "main-site-nuxt",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -49,6 +49,6 @@
     "nightwatch": "^2.0.2",
     "nuxt-leaflet": "^0.0.27",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.18"
+    "tailwindcss": "^3.0.19"
   }
 }
