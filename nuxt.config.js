@@ -19,7 +19,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/overrides.sass'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -35,16 +35,24 @@ export default {
     '@nuxtjs/vuetify',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@aceforth/nuxt-optimized-images',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'nuxt-leaflet',
+    '@nuxtjs/dayjs',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
+
+  // nuxt-optimized-images config: https://marquez.co/docs/nuxt-optimized-images/?utm_source=npm&utm_medium=readme&utm_campaign=nuxt-optimized-images
+  optimizedImages: {
+    optimizeImages: true,
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -56,7 +64,7 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: '#f9a1bc',
+          primary: '#000000',
           secondary: '#ffba74',
           accent: '#8bc34a',
           error: '#ffc107',
@@ -67,6 +75,12 @@ export default {
         },
       },
     },
+  },
+
+  dayjs: {
+    plugins: [
+      'relativeTime', // import 'dayjs/plugin/timezone'
+    ], // Your Day.js plugin
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
