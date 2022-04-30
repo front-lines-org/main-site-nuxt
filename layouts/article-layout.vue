@@ -4,9 +4,10 @@
       <div class="tw-sticky tw-top-0 tw-z-50 tw-flex">
         <tab-bar />
       </div>
-      <div class="site-container tw-mb-2 mx-auto">
+      <div class="site-container tw-mb-44 mx-auto">
         <Nuxt />
       </div>
+      <Footer />
     </v-app>
   </div>
 </template>

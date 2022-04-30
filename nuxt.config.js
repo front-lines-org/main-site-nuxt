@@ -4,8 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - main-site-nuxt',
-    title: 'Front Lines',
+    titleTemplate: '%s - Front Lines',
+    title: 'Front page',
     htmlAttrs: {
       lang: 'en',
     },
@@ -59,7 +59,7 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     /* module options */
     font: {
-      family: 'Roboto',
+      family: 'Cousine',
     },
     theme: {
       themes: {

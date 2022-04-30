@@ -24,5 +24,8 @@ export default {
       news,
     }
   },
+  head: {
+    title: 'Frontpage',
+  },
 }
 </script>

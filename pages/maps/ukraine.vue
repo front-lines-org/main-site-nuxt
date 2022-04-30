@@ -148,6 +148,11 @@
 
 <script>
 export default {
+  async asyncData({ $content, params }) {
+    const geoEvents = await $content('geo_events').fetch()
+    console.log(geoEvents)
+    return { geoEvents }
+  },
   data() {
     return {
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
@@ -164,10 +169,8 @@ export default {
       pressed: null,
     }
   },
-  async asyncData({ $content, params }) {
-    const geoEvents = await $content('geo_events').fetch()
-    console.log(geoEvents)
-    return { geoEvents }
+  head: {
+    title: 'Ukraine Map',
   },
   async created() {
     const response = await Promise.all([
