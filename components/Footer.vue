@@ -4,11 +4,7 @@
       <v-card class="flex" flat tile>
         <v-divider />
         <v-card-title>
-          <img
-            src="/logo_transparent.png"
-            width="200px"
-            style="height: 100px; object-fit: cover"
-          />
+          <logo />
           <strong class="subheading"></strong>
 
           <v-spacer></v-spacer>
@@ -30,9 +26,23 @@
 </template>
 
 <script>
+import Logo from './Logo.vue'
 export default {
+  components: { Logo },
   data: () => ({
-    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-github', 'mdi-instagram'],
+    icons: [
+      'mdi-facebook',
+      'mdi-twitter',
+      'mdi-github',
+      'mdi-instagram',
+      'mdi-discord',
+    ],
   }),
 }
 </script>
+
+<style>
+.v-footer .logo {
+  transform: scale(0.75);
+}
+</style>

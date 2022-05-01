@@ -1,7 +1,7 @@
 <template>
   <v-toolbar color="elevation-0">
     <v-toolbar-title>
-      <img src="/logo_transparent.png" width="200px" />
+      <logo />
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon>
@@ -15,7 +15,9 @@
   </v-toolbar>
 </template>
 <script>
+import Logo from './Logo.vue'
 export default {
+  components: { Logo },
   props: {
     title: {
       type: Boolean,

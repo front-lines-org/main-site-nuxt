@@ -56,11 +56,16 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    defaultAssets: {
+      font: {
+        family: 'Cousine',
+      },
+      icons: 'mdi',
+    },
+    treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     /* module options */
-    font: {
-      family: 'Cousine',
-    },
+
     theme: {
       themes: {
         light: {

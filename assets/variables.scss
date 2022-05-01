@@ -4,10 +4,10 @@ $fortnightly-heading-font-style: italic;
 $fortnightly-primary-color: #6b38fb;
 
 // Preset variables
-$body-font-family: 'Libre Franklin', sans-serif;
+$body-font-family: 'Cousine', monospace;
 $border-radius-root: 0;
 $btn-font-weight: 700;
-$heading-font-family: 'Merriweather', sans-serif;
+$heading-font-family: 'Cousine', monospace;
 $headings: (
   'h1': (
     'font-family': $heading-font-family,
@@ -89,3 +89,14 @@ $material-light: (
   'chips': #ffffff,
 );
 $stepper-elevation: 0;
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #f9a1bc;
+}
+
+::selection {
+  color: white;
+  background: #f9a1bc;
+}
