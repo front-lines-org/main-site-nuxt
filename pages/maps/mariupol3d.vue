@@ -1,7 +1,7 @@
 <template>
   <div id="map-wrap" style="height: 90vh">
     <client-only>
-      <l-map :zoom="zoom" :center="center">
+      <l-map ref="map" :zoom="zoom" :center="center">
         <l-tile-layer
           url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
         ></l-tile-layer>
@@ -143,6 +143,15 @@
         ></l-tile-layer>
       </l-map>
     </client-only>
+
+    <link
+      href="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script src="https://cdn.osmbuildings.org/classic/0.2.2b/OSMBuildings-Leaflet.js"></script>
   </div>
 </template>
 
@@ -167,6 +176,7 @@ export default {
       crimea: null,
       luhansk: null,
       transnistria: null,
+      osmb: null,
       mariupol: null,
       mariupol2: null,
       style: { color: 'red', weight: 5 },
@@ -180,9 +190,13 @@ export default {
   computed: {
     initialMariupol() {
       if (this.mariupol && this.mariupol2) {
+        // console.log(this.mariupol2)
+        this.osmb.date(new Date(2017, 15, 1, 10 + this.timer * 10, 30))
         const interpolater = interpolate(this.mariupol[0], this.mariupol2[0], {
           string: false,
         })
+        // console.log(interpolater(0.5))
+        // console.log(this.mariupol)
         return {
           type: 'FeatureCollection',
           features: [
@@ -223,6 +237,11 @@ export default {
     this.transnistria = await response[4].json()
     this.mariupol = await response[5].json()
     this.mariupol2 = await response[6].json()
+    console.log(this.$L)
+    // eslint-disable-next-line no-undef
+    this.osmb = new OSMBuildings(this.$refs.map.mapObject).load(
+      'https://{s}.data.osmbuildings.org/0.2/anonymous/tile/{z}/{x}/{y}.json'
+    )
   },
   methods: {
     onClick(geoItem) {
