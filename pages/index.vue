@@ -17,7 +17,7 @@ export default {
         'createdAt',
         'category',
       ])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
 
     return {
