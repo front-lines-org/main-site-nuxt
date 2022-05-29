@@ -89,3 +89,14 @@ $material-light: (
   'chips': #ffffff,
 );
 $stepper-elevation: 0;
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #f9a1bc;
+}
+
+::selection {
+  color: white;
+  background: #f9a1bc;
+}

@@ -28,6 +28,10 @@ export default {
       type: String,
       default: '',
     },
+    createdAt: {
+      type: String,
+      default: '',
+    },
   },
   computed: {},
 }

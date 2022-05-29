@@ -3,9 +3,10 @@
     <v-container>
       <nav-bar />
       <tab-bar />
-      <div class="site-container tw-mb-2">
+      <div class="site-container tw-mb-44">
         <Nuxt />
       </div>
+      <Footer />
     </v-container>
   </v-app>
 </template>

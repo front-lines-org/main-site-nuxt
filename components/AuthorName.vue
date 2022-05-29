@@ -1,8 +1,15 @@
 <template>
   <p>
-    <nuxt-link :to="`/Author/${authorUserName}`" class="tw-text-black">
-      {{ authorName }}</nuxt-link
+    <nuxt-link
+      v-if="authorUserName"
+      :to="`/Author/${authorUserName}`"
+      class="tw-text-black"
     >
+      {{ authorName }}
+    </nuxt-link>
+    <a v-if="authorLink" :href="authorLink" class="tw-text-black">
+      {{ authorName }}
+    </a>
     {{ date }}
   </p>
 </template>
@@ -16,7 +23,13 @@ export default {
     },
     authorUserName: {
       type: String,
-      required: true,
+      required: false,
+      default: null,
+    },
+    authorLink: {
+      type: String,
+      required: false,
+      default: null,
     },
     articleDate: {
       type: String,

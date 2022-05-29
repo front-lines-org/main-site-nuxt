@@ -4,8 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - main-site-nuxt',
-    title: 'Front Lines',
+    titleTemplate: '%s - Front Lines',
+    title: 'Front page',
     htmlAttrs: {
       lang: 'en',
     },
@@ -56,11 +56,16 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    defaultAssets: {
+      font: {
+        family: 'Cousine',
+      },
+      icons: 'mdi',
+    },
+    treeShake: true,
     customVariables: ['~/assets/variables.scss'],
     /* module options */
-    font: {
-      family: 'Roboto',
-    },
+
     theme: {
       themes: {
         light: {

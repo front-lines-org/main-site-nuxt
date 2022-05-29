@@ -17,12 +17,18 @@ export default {
         'createdAt',
         'category',
       ])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
 
     return {
       news,
     }
+  },
+  head: {
+    title: 'Frontpage',
+    script: [
+      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+    ],
   },
 }
 </script>
