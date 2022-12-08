@@ -19,7 +19,7 @@ export default {
   props: {
     title: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     onOpenMenu: {
       type: String,
